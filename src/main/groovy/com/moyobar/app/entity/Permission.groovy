@@ -10,10 +10,8 @@ import javax.validation.constraints.NotNull
  * Created by Rocky on 9/13/16.
  */
 @Entity
-class Permission {
+class Permission extends DataEntity{
 
-    @Id
-    String id
     @NotNull
     String name
     @NotNull
@@ -22,11 +20,9 @@ class Permission {
     String url
     @OneToOne
     Permission parent
+    int type
     @NotNull
     String path
     @NotNull
     int depth = 1
-    int status
-    @Version
-    Integer version
 }

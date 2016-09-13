@@ -12,5 +12,17 @@ spring:
     hibernate:
       ddl-auto: update
 
-
+shiro:
+  realm: com.moyobar.app.security.SecurityRealm
+  loginUrl:  /login.html
+  successUrl: /index.html
+  unauthorizedUrl: /403.html
+  filterChainDefinitions:
+    #"/login.auth": authc
+    "/login.auth": anon
+    "/logout": logout
+    "/static/**": anon
+    "/webjars/**": anon
+    "/favicon.ico": anon
+    "/**": authc
 
