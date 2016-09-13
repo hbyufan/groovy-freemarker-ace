@@ -10,11 +10,9 @@ import javax.annotation.Resource
  * Created by Rocky on 9/13/16.
  */
 @Component
-class UserService {
-
-    @Resource UserRepository userRepository
+class UserService extends BaseService<UserRepository,User,String>{
 
     User login(def loginName){
-        userRepository.findByLoginNameAndStatus(loginName,0)
+        repository.findByLoginNameAndStatus(loginName,0)
     }
 }

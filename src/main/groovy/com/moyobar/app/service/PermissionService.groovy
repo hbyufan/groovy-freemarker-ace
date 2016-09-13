@@ -10,11 +10,9 @@ import javax.annotation.Resource
  * Created by Rocky on 9/13/16.
  */
 @Component
-class PermissionService {
-
-    @Resource PermissionRepository permissionRepository
+class PermissionService extends BaseService<PermissionRepository,Permission,String>{
 
     public List<Permission> getMenus(){
-        permissionRepository.findByTypeAndStatusAndDepthAndIsDelete(Permission.MENU,Permission.NORMAL,Permission.ROOT,Permission.EXIST)
+        repository.findByTypeAndStatusAndDepthAndIsDelete(Permission.MENU,Permission.NORMAL,Permission.ROOT,Permission.EXIST)
     }
 }
