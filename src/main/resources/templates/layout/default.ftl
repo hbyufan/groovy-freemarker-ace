@@ -414,6 +414,37 @@
         </div><!-- /.sidebar-shortcuts -->
 
         <ul class="nav nav-list">
+
+            <#list menus() as menu>
+                <li class="">
+                    <a href="${menu.url!''}" <#if (menu.childrens?size > 0) >class="dropdown-toggle"</#if> >
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text"> ${menu.name}</span>
+                        <#if (menu.childrens?size > 0) >
+                            <b class="arrow fa fa-angle-down"></b>
+                        </#if>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <#if (menu.childrens?size > 0) >
+                    <ul class="submenu">
+                        <#list menu.childrens as submenu>
+                            <li class="">
+                                <a href="/webjars/ace/#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    ${submenu.name}
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                        </#list>
+                    </ul>
+                    </#if>
+
+                </li>
+            </#list>
+
             <li class="active">
                 <a href="/webjars/ace/index.html">
                     <i class="menu-icon fa fa-tachometer"></i>

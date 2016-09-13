@@ -10,13 +10,16 @@ import java.time.LocalDateTime
 abstract class DataEntity extends BaseEntity{
 
     public final static int NORMAL = 0
-    public final static int DELETED = 1
+    public final static boolean DELETED = true
+    public final static boolean EXIST = false
     public final static int WAIT_AUDIT = 1
     public final static int REJECT = -1
 
     String creator
+    @Column(columnDefinition = "timestamp")
     LocalDateTime createdTime
     String modifier
+    @Column(columnDefinition = "timestamp")
     LocalDateTime modifiedTime
     int status = NORMAL
     @Column(columnDefinition = "tinyint")
