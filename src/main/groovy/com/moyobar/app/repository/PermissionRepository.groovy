@@ -12,4 +12,6 @@ interface PermissionRepository extends JpaRepository<Permission,String>{
 
     @OrderBy("sort asc")
     List<Permission> findByTypeAndStatusAndDepthAndIsDelete(int type,int status,int depth,Boolean isDelete)
+
+    List<Permission> findByUrl(String url)
 }

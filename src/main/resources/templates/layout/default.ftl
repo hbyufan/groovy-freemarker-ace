@@ -416,9 +416,9 @@
         <ul class="nav nav-list">
 
             <#list menus() as menu>
-                <li class="">
+                <li class="<#if menu.id == menuId >active</#if>">
                     <a href="${menu.url!''}" <#if (menu.childrens?size > 0) >class="dropdown-toggle"</#if> >
-                        <i class="menu-icon fa fa-tachometer"></i>
+                        <i class="menu-icon fa ${menu.icon}"></i>
                         <span class="menu-text"> ${menu.name}</span>
                         <#if (menu.childrens?size > 0) >
                             <b class="arrow fa fa-angle-down"></b>

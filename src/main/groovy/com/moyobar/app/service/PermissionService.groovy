@@ -15,4 +15,9 @@ class PermissionService extends BaseService<PermissionRepository,Permission,Stri
     public List<Permission> getMenus(){
         repository.findByTypeAndStatusAndDepthAndIsDelete(Permission.MENU,Permission.NORMAL,Permission.ROOT,Permission.EXIST)
     }
+
+    Permission getMenuByUrl(String url){
+        def menus = repository.findByUrl(url)
+        menus.first()
+    }
 }
