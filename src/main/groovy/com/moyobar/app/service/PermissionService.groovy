@@ -18,6 +18,6 @@ class PermissionService extends BaseService<PermissionRepository,Permission,Stri
 
     Permission getMenuByUrl(String url){
         def menus = repository.findByUrl(url)
-        menus.first()
+        menus.size() > 0 ? menus.first() : null
     }
 }

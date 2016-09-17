@@ -28,9 +28,10 @@ class MenuHandlerInterceptor extends HandlerInterceptorAdapter{
             if ( menu != null ){
 
                 if( menu.depth != Permission.ROOT ){
-                    request.session.setAttribute("menuId",menu.parent.id)
+                    request.session.setAttribute "menuId",menu.parent.id
+                    request.session.setAttribute "subMenuId",menu.id
                 }else{
-                    request.session.setAttribute("menuId",menu.id)
+                    request.session.setAttribute "menuId",menu.id
                 }
 
             }
