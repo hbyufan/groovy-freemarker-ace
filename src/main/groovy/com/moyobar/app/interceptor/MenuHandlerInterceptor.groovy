@@ -32,6 +32,7 @@ class MenuHandlerInterceptor extends HandlerInterceptorAdapter{
                     request.session.setAttribute "subMenuId",menu.id
                 }else{
                     request.session.setAttribute "menuId",menu.id
+                    request.session.setAttribute "subMenuId","0"
                 }
 
             }

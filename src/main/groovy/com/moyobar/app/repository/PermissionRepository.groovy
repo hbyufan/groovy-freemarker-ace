@@ -1,6 +1,7 @@
 package com.moyobar.app.repository
 
 import com.moyobar.app.entity.Permission
+import org.springframework.data.domain.Sort
 import org.springframework.data.jpa.repository.JpaRepository
 
 import javax.persistence.OrderBy
@@ -10,8 +11,8 @@ import javax.persistence.OrderBy
  */
 interface PermissionRepository extends JpaRepository<Permission,String>{
 
-    @OrderBy("sort asc")
-    List<Permission> findByTypeAndStatusAndDepthAndIsDelete(int type,int status,int depth,Boolean isDelete)
+
+    List<Permission> findByTypeAndStatusAndDepthAndIsDelete(int type, int status, int depth, Boolean isDelete,Sort sort)
 
     List<Permission> findByUrl(String url)
 }

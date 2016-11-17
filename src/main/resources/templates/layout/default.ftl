@@ -431,7 +431,7 @@
                     <ul class="submenu">
                         <#list menu.childrens as submenu>
                             <li class="<#if submenu.id == subMenuId >active</#if>">
-                                <a href="/webjars/ace/#" class="dropdown-toggle">
+                                <a href="${submenu.url!''}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     ${submenu.name}
                                 </a>
@@ -1086,6 +1086,8 @@
     if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
 <script src="/webjars/ace/assets/js/bootstrap.min.js"></script>
+<script src="/webjars/ace/assets/js/ace-elements.min.js"></script>
+<script src="/webjars/ace/assets/js/ace.min.js"></script>
 
 </body>
 </html>
