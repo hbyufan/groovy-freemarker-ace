@@ -1,306 +1,98 @@
 <!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
+<!--<![endif]-->
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>Login Page - Ace Admin</title>
+    <title>中美联泰大都会 ECIF | 登入</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
 
-    <meta name="description" content="User login page" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/style.min.css" rel="stylesheet" />
+    <link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="assets/css/theme/default.css" rel="stylesheet" id="theme" />
+    <!-- ================== END BASE CSS STYLE ================== -->
 
-    <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="/webjars/ace/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/webjars/ace/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-
-    <!-- text fonts -->
-    <link rel="stylesheet" href="/webjars/ace/assets/css/fonts.googleapis.com.css" />
-
-    <!-- ace styles -->
-    <link rel="stylesheet" href="/webjars/ace/assets/css/ace.min.css" />
-
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="/webjars/ace/assets/css/ace-part2.min.css" />
-    <![endif]-->
-    <link rel="stylesheet" href="/webjars/ace/assets/css/ace-rtl.min.css" />
-
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="/webjars/ace/assets/css/ace-ie.min.css" />
-    <![endif]-->
-
-    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-    <!--[if lte IE 8]>
-    <script src="/webjars/ace/assets/js/html5shiv.min.js"></script>
-    <script src="/webjars/ace/assets/js/respond.min.js"></script>
-    <![endif]-->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="assets/plugins/pace/pace.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
 </head>
+<body class="pace-top">
+<!-- begin #page-loader -->
+<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+<!-- end #page-loader -->
 
-<body class="login-layout">
-<div class="main-container">
-    <div class="main-content">
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-                <div class="login-container">
-                    <div class="center">
-                        <h1>
-                            <i class="ace-icon fa fa-leaf green"></i>
-                            <span class="red">Ace</span>
-                            <span class="white" id="id-text2">Application</span>
-                        </h1>
-                        <h4 class="blue" id="id-company-text">&copy; Company Name</h4>
-                    </div>
-
-                    <div class="space-6"></div>
-
-                    <div class="position-relative">
-                        <div id="login-box" class="login-box visible widget-box no-border">
-                            <div class="widget-body">
-                                <div class="widget-main">
-                                    <h4 class="header blue lighter bigger">
-                                        <i class="ace-icon fa fa-coffee green"></i>
-                                        请输入登录信息
-                                    </h4>
-
-                                    <div class="space-6"></div>
-
-                                    <form method="post" action="/login.auth">
-                                        <fieldset>
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" name="username" class="form-control" placeholder="用户名" />
-															<i class="ace-icon fa fa-user"></i>
-														</span>
-                                            </label>
-
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" name="password" class="form-control" placeholder="密码" />
-															<i class="ace-icon fa fa-lock"></i>
-														</span>
-                                            </label>
-
-                                            <div class="space"></div>
-
-                                            <div class="clearfix">
-                                                <label class="inline">
-                                                    <input type="checkbox" class="ace" />
-                                                    <span class="lbl"> 记住我</span>
-                                                </label>
-
-                                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
-                                                    <i class="ace-icon fa fa-key"></i>
-                                                    <span class="bigger-110">登入</span>
-                                                </button>
-                                            </div>
-
-                                            <div class="space-4"></div>
-                                        </fieldset>
-                                    </form>
-
-
-                                </div><!-- /.widget-main -->
-
-                                <div class="toolbar clearfix">
-                                    <div>
-                                        <a href="#" data-target="#forgot-box" class="forgot-password-link">
-                                            <i class="ace-icon fa fa-arrow-left"></i>
-                                            我忘记了密码
-                                        </a>
-                                    </div>
-
-                                    <div>
-                                        <a href="#" data-target="#signup-box" class="user-signup-link">
-                                            我需要注册
-                                            <i class="ace-icon fa fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div><!-- /.widget-body -->
-                        </div><!-- /.login-box -->
-
-                        <div id="forgot-box" class="forgot-box widget-box no-border">
-                            <div class="widget-body">
-                                <div class="widget-main">
-                                    <h4 class="header red lighter bigger">
-                                        <i class="ace-icon fa fa-key"></i>
-                                        重置密码
-                                    </h4>
-
-                                    <div class="space-6"></div>
-                                    <p>
-                                        输入你的邮箱
-                                    </p>
-
-                                    <form>
-                                        <fieldset>
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
-															<i class="ace-icon fa fa-envelope"></i>
-														</span>
-                                            </label>
-
-                                            <div class="clearfix">
-                                                <button type="button" class="width-35 pull-right btn btn-sm btn-danger">
-                                                    <i class="ace-icon fa fa-lightbulb-o"></i>
-                                                    <span class="bigger-110">发送邮件给我!</span>
-                                                </button>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div><!-- /.widget-main -->
-
-                                <div class="toolbar center">
-                                    <a href="#" data-target="#login-box" class="back-to-login-link">
-                                        返回登录
-                                        <i class="ace-icon fa fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div><!-- /.widget-body -->
-                        </div><!-- /.forgot-box -->
-
-                        <div id="signup-box" class="signup-box widget-box no-border">
-                            <div class="widget-body">
-                                <div class="widget-main">
-                                    <h4 class="header green lighter bigger">
-                                        <i class="ace-icon fa fa-users blue"></i>
-                                        新用户注册
-                                    </h4>
-
-                                    <div class="space-6"></div>
-                                    <p> 填写注册信息: </p>
-
-                                    <form>
-                                        <fieldset>
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
-															<i class="ace-icon fa fa-envelope"></i>
-														</span>
-                                            </label>
-
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="用户名" />
-															<i class="ace-icon fa fa-user"></i>
-														</span>
-                                            </label>
-
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="密码" />
-															<i class="ace-icon fa fa-lock"></i>
-														</span>
-                                            </label>
-
-                                            <label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="重复" />
-															<i class="ace-icon fa fa-retweet"></i>
-														</span>
-                                            </label>
-
-                                            <div class="space-24"></div>
-
-                                            <div class="clearfix">
-                                                <button type="reset" class="width-30 pull-left btn btn-sm">
-                                                    <i class="ace-icon fa fa-refresh"></i>
-                                                    <span class="bigger-110">重置</span>
-                                                </button>
-
-                                                <button type="button" class="width-65 pull-right btn btn-sm btn-success">
-                                                    <span class="bigger-110">注册</span>
-
-                                                    <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-                                                </button>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-
-                                <div class="toolbar center">
-                                    <a href="#" data-target="#login-box" class="back-to-login-link">
-                                        <i class="ace-icon fa fa-arrow-left"></i>
-                                        返回登录
-                                    </a>
-                                </div>
-                            </div><!-- /.widget-body -->
-                        </div><!-- /.signup-box -->
-                    </div><!-- /.position-relative -->
-
-                    <div class="navbar-fixed-top align-right">
-                        <br />
-                        &nbsp;
-                        <a id="btn-login-dark" href="#">Dark</a>
-                        &nbsp;
-                        <span class="blue">/</span>
-                        &nbsp;
-                        <a id="btn-login-blur" href="#">Blur</a>
-                        &nbsp;
-                        <span class="blue">/</span>
-                        &nbsp;
-                        <a id="btn-login-light" href="#">Light</a>
-                        &nbsp; &nbsp; &nbsp;
-                    </div>
+<!-- begin #page-container -->
+<div id="page-container" class="fade">
+    <!-- begin login -->
+    <div class="login bg-black animated fadeInDown">
+        <!-- begin brand -->
+        <div class="login-header">
+            <div class="brand">
+                <span class="logo"></span>ECIF
+                <small>中美联泰大都会人寿保险有限公司</small>
+            </div>
+            <div class="icon">
+                <i class="fa fa-sign-in"></i>
+            </div>
+        </div>
+        <!-- end brand -->
+        <div class="login-content">
+            <form action="/login.auth" method="POST" class="margin-bottom-0">
+                <div class="form-group m-b-20">
+                    <input type="text" class="form-control input-lg inverse-mode no-border" placeholder="用户名" name="username" required />
                 </div>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.main-content -->
-</div><!-- /.main-container -->
+                <div class="form-group m-b-20">
+                    <input type="password" class="form-control input-lg inverse-mode no-border" placeholder="密码" name="password" required />
+                </div>
+                <div class="checkbox m-b-20">
+                    <label>
+                        <input type="checkbox" /> 记住我
+                    </label>
+                </div>
+                <div class="login-buttons">
+                    <button type="submit" class="btn btn-success btn-block btn-lg">登入</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end login -->
 
-<!-- basic scripts -->
+</div>
+<!-- end page container -->
 
-<!--[if !IE]> -->
-<script src="/webjars/ace/assets/js/jquery-2.1.4.min.js"></script>
-
-
-<!-- <![endif]-->
-
-<!--[if IE]>
-<script src="/webjars/ace/assets/js/jquery-1.11.3.min.js"></script>
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+<script src="assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script src="assets/crossbrowserjs/html5shiv.js"></script>
+<script src="assets/crossbrowserjs/respond.min.js"></script>
+<script src="assets/crossbrowserjs/excanvas.min.js"></script>
 <![endif]-->
-<script type="text/javascript">
-    if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+<!-- ================== END BASE JS ================== -->
+
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script src="assets/js/apps.min.js"></script>
+<!-- ================== END PAGE LEVEL JS ================== -->
+
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
 </script>
-
-<!-- inline scripts related to this page -->
-<script type="text/javascript">
-    jQuery(function($) {
-        $(document).on('click', '.toolbar a[data-target]', function(e) {
-            e.preventDefault();
-            var target = $(this).data('target');
-            $('.widget-box.visible').removeClass('visible');//hide others
-            $(target).addClass('visible');//show target
-        });
-    });
-
-
-
-    //you don't need this, just used for changing background
-    jQuery(function($) {
-        $('#btn-login-dark').on('click', function(e) {
-            $('body').attr('class', 'login-layout');
-            $('#id-text2').attr('class', 'white');
-            $('#id-company-text').attr('class', 'blue');
-
-            e.preventDefault();
-        });
-        $('#btn-login-light').on('click', function(e) {
-            $('body').attr('class', 'login-layout light-login');
-            $('#id-text2').attr('class', 'grey');
-            $('#id-company-text').attr('class', 'blue');
-
-            e.preventDefault();
-        });
-        $('#btn-login-blur').on('click', function(e) {
-            $('body').attr('class', 'login-layout blur-login');
-            $('#id-text2').attr('class', 'white');
-            $('#id-company-text').attr('class', 'light-blue');
-
-            e.preventDefault();
-        });
-
-    });
+<script>
 </script>
 </body>
 </html>

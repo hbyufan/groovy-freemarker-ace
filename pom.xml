@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.moyobar.framework</groupId>
-	<artifactId>groovy-freemarker-ace</artifactId>
+	<groupId>com.sinosoft.apps</groupId>
+	<artifactId>metlife-ecif</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>Admin Template With Groovy and Freemarker and ACE</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Metlife ECIF</name>
+	<description>Metlife ECIF</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -76,11 +76,11 @@
 			<artifactId>groovy</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>ace-bootstrap</artifactId>
-			<version>1.0</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.webjars</groupId>-->
+			<!--<artifactId>ace-bootstrap</artifactId>-->
+			<!--<version>1.0</version>-->
+		<!--</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

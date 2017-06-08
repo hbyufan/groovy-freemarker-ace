@@ -1,7 +1,7 @@
-# groovy-freemarker-ace
-Ace Admin Template
+# 大都会 ECIF Demo
+中美联泰大都会 ECIF
 
 - Groovy
 - Freemarker
-- Ace BootStrap Template
+- Color Admin
 - Spring Boot

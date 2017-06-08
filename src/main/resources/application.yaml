@@ -25,6 +25,7 @@ shiro:
     "/login.auth": anon
     "/logout": logout
     "/static/**": anon
+    "/assets/**": anon
     "/webjars/**": anon
     "/favicon.ico": anon
     "/api/**": anon
