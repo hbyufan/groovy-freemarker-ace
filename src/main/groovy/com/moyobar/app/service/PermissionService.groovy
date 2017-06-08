@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component
 @Component
 class PermissionService extends BaseService<PermissionRepository,Permission,String>{
 
-    public List<Permission> getMenus(){
-        repository.findByTypeAndStatusAndDepthAndIsDelete(Permission.MENU,Permission.NORMAL,Permission.ROOT,Permission.EXIST,new Sort("sort"))
+    List<Permission> getMenus(){
+        repository.findByTypeAndStatusAndDepthAndIsDelete(Permission.MENU,Permission.NORMAL,Permission.ROOT,Permission.REMAINED,new Sort("sort"))
     }
 
     Permission getMenuByUrl(String url){

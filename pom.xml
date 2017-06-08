@@ -127,7 +127,7 @@
 		<repository>
 			<id>ibrace</id>
 			<name>ibrace</name>
-			<url>http://maven.ibrace.cn/maven2</url>
+			<url>http://maven.sinosoft.co:888/repository/maven-public/</url>
 		</repository>
 	</repositories>
 
@@ -135,7 +135,7 @@
 		<pluginRepository>
 			<id>ibrace</id>
 			<name>ibrace</name>
-			<url>http://maven.ibrace.cn/maven2</url>
+			<url>http://maven.sinosoft.co:888/repository/maven-public/</url>
 		</pluginRepository>
 	</pluginRepositories>
 
