@@ -11,7 +11,7 @@ abstract class DataEntity extends BaseEntity{
 
     public final static int NORMAL = 0
     public final static boolean DELETED = true
-    public final static boolean EXIST = false
+    public final static boolean REMAINED = false
     public final static int WAIT_AUDIT = 1
     public final static int REJECT = -1
 
